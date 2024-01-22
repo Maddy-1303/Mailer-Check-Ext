@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Mail Checker Extension",
+    "version": "1.0",
+    "description": "Import Data",
+    "permissions": [
+      "tabs",
+      "notifications"
+    ],
+    "host_permissions": [
+      "https://api.namefake.com/"
+    ],
+    "action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://app.mailercheck.com/register"],
+        "js": ["content_script.js"],
+        "run_at": "document_end"
+      }
+    ]
+  }
+  
